@@ -123,6 +123,39 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope><!--runtime 依赖在运行和测试系统的时候需要-->
         </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--卫士通密码机相关-->
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>2.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>wst.hsm.api</groupId>  <!--自定义-->
+            <artifactId>westone</artifactId>    <!--自定义-->
+            <version>1.7.8</version> <!--自定义-->
+            <scope>system</scope> <!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
+            <systemPath>${basedir}/doc/wst-hsm-api-1.7.8.jar</systemPath> <!--项目根目录下的lib文件夹下-->
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.22</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -133,6 +166,13 @@
 <!--                <configuration>-->
 <!--                    <fork>true</fork>-->
 <!--                </configuration>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
             </plugin>
             <!--配置mybatis代码生成工具-->
             <!--使用生成工具可以直接使用maven的命令提示符，

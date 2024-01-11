@@ -17,8 +17,8 @@ public class CompanyFrameApplicationTests {
 
     @Autowired
     private RedisService redisService;
-    @Autowired
-    private SysUserRoleMapper sysUserRoleMapper;
+//    @Autowired
+//    private SysUserRoleMapper sysUserRoleMapper;
     @Autowired
     private RoleService roleService;
     @Autowired
